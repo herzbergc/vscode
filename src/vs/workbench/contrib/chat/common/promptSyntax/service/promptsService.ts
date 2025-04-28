@@ -172,6 +172,7 @@ export class PromptsService extends Disposable implements IPromptsService {
 		});
 	}
 
+	@logTime()
 	public async findInstructionFilesFor(
 		files: readonly URI[],
 	): Promise<readonly URI[]> {
@@ -242,6 +243,7 @@ export class PromptsService extends Disposable implements IPromptsService {
 		return metadata;
 	}
 
+	@logTime()
 	public async getCombinedToolsMetadata(
 		promptUris: readonly URI[],
 	): Promise<TCombinedToolsMetadata | null> {
